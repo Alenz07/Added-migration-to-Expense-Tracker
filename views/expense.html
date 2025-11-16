@@ -1,0 +1,53 @@
+<html>
+<h1> This is Expense tracker App using Mysql db
+</h1>
+<head>        
+
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+</head>
+<body>
+    <button id="payBtn">Get Premium Feature</button>
+    <form onsubmit="posting(event)">
+<label>Amount Spend:</label> 
+<input type="num ber" name="amountSpend" id="amountSpend"><br><br>
+<label>Where:</label> 
+<input type="text" name="where" id="where"><br><br>
+<label>Description</label> 
+<input type="text" name="description" id="description"><br><br>
+<button type="submit">Submit</button>
+</form>
+<label>Number of Rows</label>
+<select id="rowsPage" onchange="receive()">
+    <option selected>5</option>
+    <option>10</option>
+    <option>20</option>
+    <option>40</option>
+</select>
+<select id="filterSelect" onchange="filterChange()">
+    <option value="all">All</option>
+    <option value="daily">Today</option>
+    <option value="weekly">Week</option>
+    <option value="monthly">Month</option>
+</select>
+<table class="leaderboard-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Email</th>
+        <th>Total Expense (₹)</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard-body"></tbody>
+  </table>
+  <label>Ask to AI</label>
+  <form onsubmit="askAi(event)">
+    <input type="text" placeholder="Ask to Gemini" id="askBox"><br>
+    <button type="submit">Get Response</button>
+  </form>
+  <p id="aiResponse"></p>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="expense.js"></script>
+    
+
+</body>
+</html>
