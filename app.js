@@ -40,7 +40,7 @@ app.post('/pay', async (req, res) => {
 });
 
 const ai = new genAi.GoogleGenAI({
-  apiKey:"AIzaSyDBp4qcmEtEDRcaClreqa89_trRi87Lua4"
+  apiKey:"YOUR_GOOGLE_API"
 });
 
 async function listen() {
@@ -53,4 +53,5 @@ async function listen() {
   catch (error) {
     console.log(error)
   }
+
 } listen()
